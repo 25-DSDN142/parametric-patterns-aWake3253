@@ -1,8 +1,9 @@
 //your parameter variables go here!
-let tri_point = 30;
+let tri_point = 10;
 let x  = 100;
 let y = 100;
 let size = 100;
+let layers = 10;
 function drawTriangleAt(tx, ty, angle) { 
   push();
   translate(tx, ty);
@@ -38,13 +39,15 @@ function my_symbol() {// do not rename this function. Treat this similarly to a 
   let angleStep = (PI / tri_point) * 120;
  
  if (tri_point >0){
-    for (let i = 0; i<tri_point; i++){
-      let angle = (angleStep*i);
-      let tx = x +size *cos (angle);
-      let ty = y +size *sin (angle);
-      randomColor();
-      drawTriangleAt(tx, ty, angle);
-
+  for (let layer = 0; layer<layers; layer ++){
+       let radius = size*(1-layer /(layer-1));
+       for (let i = 0; i<tri_point; i++){
+       let angle = (angleStep*i);
+       let tx = x +radius *cos (angle);
+       let ty = y +radius *sin (angle);
+       fill(randomColor());
+       drawTriangleAt(tx, ty, angle);
+      }
  }
 }
  
