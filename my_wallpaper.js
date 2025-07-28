@@ -3,16 +3,14 @@ let tri_point = 30;
 let size = 40;
 let layers = 3;
 let strokeThickness = 5;
+let triangleScale = 1.5;
 
 
-
-let x  = 100;
-let y = 100;
-
-function drawTriangleAt(tx, ty, angle) { 
+function drawTriangleAt(tx, ty, angle, s) { 
   push();
   translate(tx, ty);
-  rotate(angle*random(TWO_PI));
+  rotate(angle);
+  scale(s);
   triangle(-3, -10, -10, 5, 5, 5);
   pop();
 }
@@ -42,7 +40,7 @@ function wallpaper_background() {
 }
 
 function my_symbol(x, y) {// do not rename this function. Treat this similarly to a Draw function
-  let angleStep = (TWO_PI / tri_point) * 360;
+  let angleStep = (TWO_PI / tri_point);
  
  if (tri_point >0){
   for (let layer = 0; layer<layers; layer ++){
@@ -53,11 +51,11 @@ function my_symbol(x, y) {// do not rename this function. Treat this similarly t
       ellipse(x, y, radius*2, radius*2);
     for (let i = 0; i<tri_point; i++){
      let angle = (angleStep*i);
-     let tx = x +radius *cos (angle);
-     let ty = y +radius *sin (angle);
+     let tx = x + radius *cos (angle);
+     let ty = y + radius *sin (angle);
      noStroke();
      fill(randomColor());
-     drawTriangleAt(tx, ty, angle);
+     drawTriangleAt(tx, ty, angle, triangleScale);
      }
     }
   }
