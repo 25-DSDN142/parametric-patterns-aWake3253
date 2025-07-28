@@ -1,8 +1,8 @@
 //your parameter variables go here!
-let tri_point = 1;
+let tri_point = 20;
 let x  = 100;
 let y = 100;
-let size = 50;
+let size =10;
 let layers = 10;
 function drawTriangleAt(tx, ty, angle) { 
   push();
@@ -21,8 +21,8 @@ function randomColor(){
 }
 
 function setup_wallpaper(pWallpaper) {
- pWallpaper.output_mode(DEVELOP_GLYPH);
-//pWallpaper.output_mode(GRID_WALLPAPER);
+// pWallpaper.output_mode(DEVELOP_GLYPH);
+pWallpaper.output_mode(GRID_WALLPAPER);
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
@@ -41,7 +41,7 @@ function my_symbol() {// do not rename this function. Treat this similarly to a 
  
  if (tri_point >0){
   for (let layer = 0; layer<layers; layer ++){
-       let radius = size*(1-layer /(layer-1));
+       let radius = size*(layer + 1);
        for (let i = 0; i<tri_point; i++){
         let angle = (angleStep*i);
         let tx = x +radius *cos (angle);
