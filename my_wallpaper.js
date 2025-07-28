@@ -1,8 +1,8 @@
 //your parameter variables go here!
-let tri_point = 10;
+let tri_point = 1;
 let x  = 100;
 let y = 100;
-let size = 100;
+let size = 50;
 let layers = 10;
 function drawTriangleAt(tx, ty, angle) { 
   push();
@@ -16,7 +16,8 @@ function randomColor(){
   let r = random (255);
   let g = random (255);
   let b = random (255);
-  return color (r, g, b);
+  let o = random (255);
+  return color (r, g, b, o);
 }
 
 function setup_wallpaper(pWallpaper) {
@@ -42,11 +43,12 @@ function my_symbol() {// do not rename this function. Treat this similarly to a 
   for (let layer = 0; layer<layers; layer ++){
        let radius = size*(1-layer /(layer-1));
        for (let i = 0; i<tri_point; i++){
-       let angle = (angleStep*i);
-       let tx = x +radius *cos (angle);
-       let ty = y +radius *sin (angle);
-       fill(randomColor());
-       drawTriangleAt(tx, ty, angle);
+        let angle = (angleStep*i);
+        let tx = x +radius *cos (angle);
+        let ty = y +radius *sin (angle);
+        noStroke();
+        fill(randomColor());
+        drawTriangleAt(tx, ty, angle);
       }
  }
 }
