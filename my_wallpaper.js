@@ -1,16 +1,18 @@
 //your parameter variables go here!
-let tri_point = 30;
+let tri_point = 20;
 let size = 40;
-let layers = 3;
+let layers = 2;
 let strokeThickness = 5;
-let triangleScale = 1.5;
+let triangleScale = 3;
 
 
 function drawTriangleAt(tx, ty, angle, s) { 
   push();
   translate(tx, ty);
   rotate(angle);
-  scale(s);
+  if (layers>3){
+    triangleScale >= 1
+  } else (scale(s));
   triangle(-3, -10, -10, 5, 5, 5);
   pop();
 }
@@ -23,8 +25,9 @@ function randomColor(){
   return color (r, g, b, o);
 }
 
+
 function setup_wallpaper(pWallpaper) {
- pWallpaper.output_mode(DEVELOP_GLYPH);
+ //pWallpaper.output_mode(DEVELOP_GLYPH);
  pWallpaper.output_mode(GRID_WALLPAPER);
  pWallpaper.resolution(FIT_TO_SCREEN);
  pWallpaper.show_guide(false); //set this to false when you're ready to print
@@ -50,7 +53,7 @@ function my_symbol(x, y) {// do not rename this function. Treat this similarly t
       strokeWeight(strokeThickness);
       ellipse(x, y, radius*2, radius*2);
     for (let i = 0; i<tri_point; i++){
-     let angle = (angleStep*i);
+     let angle = (PI/tri_point*120*(i));
      let tx = x + radius *cos (angle);
      let ty = y + radius *sin (angle);
      noStroke();
