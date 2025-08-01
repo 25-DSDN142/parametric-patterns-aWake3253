@@ -11,21 +11,22 @@ function drawTriangleAt(tx, ty, angle, s) {
   translate(tx, ty);
   rotate(angle);
   if (layers>3){
-    triangleScale >= 1
+    triangleScale = 1
   } else (scale(s));
   triangle(-3, -10, -10, 5, 5, 5);
   pop();
 }
 
-function randomColor(){
-  let r = random (255);
-  let g = random (255);
-  let b = random (255);
-  let o = random (50, 255);
-  return color (r, g, b, o);
+function randomColorPalette(){
+let colorPalette = [
+color(255, 100, 50, 180),
+color(215, 170, 50, 180),
+color(255, 127, 50, 180),
+color(255, 178, 37, 180),
+];
+return colorPalette[int(random(colorPalette.length))];
+
 }
-
-
 function setup_wallpaper(pWallpaper) {
  //pWallpaper.output_mode(DEVELOP_GLYPH);
  pWallpaper.output_mode(GRID_WALLPAPER);
@@ -57,7 +58,7 @@ function my_symbol(x, y) {// do not rename this function. Treat this similarly t
      let tx = x + radius *cos (angle);
      let ty = y + radius *sin (angle);
      noStroke();
-     fill(randomColor());
+     fill(randomColorPalette());
      drawTriangleAt(tx, ty, angle, triangleScale);
      }
     }
