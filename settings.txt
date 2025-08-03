@@ -10,13 +10,27 @@ Your final settings.txt will look something like this when you are finished:
 Wallpaper 1:
 
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+let tri_point = 20; //allows user to change the amount of triangles in a layer
+let size = 30; // allows user to change the spacing of the layers
+let layers = 4; //allows user to change amount of concentric circle layers
+let strokeThickness = 5; //allows user to change thickness of rings
+let triangleScale = 3; //allows user to change size of triangle
+
+function randomColorPalette(){ //allows user to edit/add colours to the color palette
+let colorPalette = [
+color(79, 93, 117, 180),
+color(191, 192, 192, 180),
+color(255, 255, 255),
+];
+return colorPalette[int(random(colorPalette.length))];
+}
+
+function wallpaper_background() {
+  background(45, 49, 66); //changes background color
+}
+// set line 58 to grey
+// set line 52 to orange
+
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -33,22 +47,193 @@ function setup_wallpaper(pWallpaper) {
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+let tri_point = 20; //allows user to change the amount of triangles in a layer
+let size = 30; // allows user to change the spacing of the layers
+let layers = 2; //allows user to change amount of concentric circle layers
+let strokeThickness = 7; //allows user to change thickness of rings
+let triangleScale = 6; //allows user to change size of triangle
 
-function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
-
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+function randomColorPalette(){ //allows user to edit/add colours to the color palette
+let colorPalette = [
+color(142, 202, 230, 180),
+color(33, 158, 188, 180),
+color(255, 183, 3, 180),
+];
+return colorPalette[int(random(colorPalette.length))];
 }
+
+function wallpaper_background() {
+  background(45, 49, 66); //changes background color
+}
+// set line 58 to blue
+// set line 52 to orange
+
+function drawTriangleAt(tx, ty, angle, s) {  //draws the triangle 
+  push();
+  translate(tx, ty);
+  rotate(angle);
+  scale(s);
+  triangle(-3, -10, -10, 5, 5, 5);
+  pop();
+}
+function setup_wallpaper(pWallpaper) {
+ //pWallpaper.output_mode(DEVELOP_GLYPH);
+ pWallpaper.output_mode(GRID_WALLPAPER);
+ pWallpaper.resolution(NINE_PORTRAIT);
+ pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+ //Grid settings
+ pWallpaper.grid_settings.cell_width  = 200;
+ pWallpaper.grid_settings.cell_height = 200;
+ pWallpaper.grid_settings.row_offset  = 300;
+}
+
+/////////////////////////////////
+
+Wallpaper 3:
+
+let tri_point = 20; //allows user to change the amount of triangles in a layer
+let size = 30; // allows user to change the spacing of the layers
+let layers = 3; //allows user to change amount of concentric circle layers
+let strokeThickness = 4; //allows user to change thickness of rings
+let triangleScale = 3; //allows user to change size of triangle
+
+function randomColorPalette(){ //allows user to edit/add colours to the color palette
+let colorPalette = [
+color(100, 110, 120, 180),
+color(220, 204, 187, 180),
+color(167, 117, 77, 180),
+];
+return colorPalette[int(random(colorPalette.length))];
+}
+
+function wallpaper_background() {
+  background(234, 180, 100); //changes background color
+}
+// set line 58 to yellow
+// set line 52 to grey
+
+function drawTriangleAt(tx, ty, angle, s) {  //draws the triangle 
+  push();
+  translate(tx, ty);
+  rotate(angle);
+  scale(s);
+  triangle(-3, -10, -10, 5, 5, 5);
+  pop();
+}
+function setup_wallpaper(pWallpaper) {
+ //pWallpaper.output_mode(DEVELOP_GLYPH);
+ pWallpaper.output_mode(GRID_WALLPAPER);
+ pWallpaper.resolution(NINE_PORTRAIT);
+ pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+ //Grid settings
+ pWallpaper.grid_settings.cell_width  = 200;
+ pWallpaper.grid_settings.cell_height = 200;
+ pWallpaper.grid_settings.row_offset  = 300;
+}
+
+/////////////////////////////////
+
+Wallpaper 4:
+
+let tri_point = 30; //allows user to change the amount of triangles in a layer
+let size = 50; // allows user to change the spacing of the layers
+let layers = 2; //allows user to change amount of concentric circle layers
+let strokeThickness = 2; //allows user to change thickness of rings
+let triangleScale = 2; //allows user to change size of triangle
+
+function randomColorPalette(){ //allows user to edit/add colours to the color palette
+let colorPalette = [
+color(3, 4, 94, 180),
+color(0, 119, 182, 180),
+color(0, 180, 216, 180),
+];
+return colorPalette[int(random(colorPalette.length))];
+}
+
+function wallpaper_background() {
+  background(144, 224, 239); //changes background color
+}
+// set line 58 to cyan
+// set line 52 to light blue
+
+function drawTriangleAt(tx, ty, angle, s) {  //draws the triangle 
+  push();
+  translate(tx, ty);
+  rotate(angle);
+  scale(s);
+  triangle(-3, -10, -10, 5, 5, 5);
+  pop();
+}
+function setup_wallpaper(pWallpaper) {
+ //pWallpaper.output_mode(DEVELOP_GLYPH);
+ pWallpaper.output_mode(GRID_WALLPAPER);
+ pWallpaper.resolution(NINE_PORTRAIT);
+ pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+ //Grid settings
+ pWallpaper.grid_settings.cell_width  = 200;
+ pWallpaper.grid_settings.cell_height = 200;
+ pWallpaper.grid_settings.row_offset  = 90;
+}
+
+/////////////////////////////////
+
+Wallpaper 5:
+let tri_point = 50; //allows user to change the amount of triangles in a layer
+let size = 30; // allows user to change the spacing of the layers
+let layers = 4; //allows user to change amount of concentric circle layers
+let strokeThickness = 0; //allows user to change thickness of rings
+let triangleScale = 4; //allows user to change size of triangle
+
+function randomColorPalette(){ //allows user to edit/add colours to the color palette
+let colorPalette = [
+color(245, 187, 0, 180),
+color(236, 159, 5, 180),
+color(191, 49, 0, 180),
+];
+return colorPalette[int(random(colorPalette.length))];
+}
+
+function wallpaper_background() {
+  background(234, 180, 100); //changes background color
+}
+// set line 58 to orange
+// set line 52 to green
+
+function drawTriangleAt(tx, ty, angle, s) {  //draws the triangle 
+  push();
+  translate(tx, ty);
+  rotate(angle);
+  scale(s);
+  triangle(-3, -10, -10, 5, 5, 5);
+  pop();
+}
+function setup_wallpaper(pWallpaper) {
+ //pWallpaper.output_mode(DEVELOP_GLYPH);
+ pWallpaper.output_mode(GRID_WALLPAPER);
+ pWallpaper.resolution(NINE_PORTRAIT);
+ pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+ //Grid settings
+ pWallpaper.grid_settings.cell_width  = 200;
+ pWallpaper.grid_settings.cell_height = 200;
+ pWallpaper.grid_settings.row_offset  = 300;
+}
+
+/////////////////////////////////
+
+Wallpaper 6:
+
+/////////////////////////////////
+
+Wallpaper 7:
+
+/////////////////////////////////
+
+Wallpaper 8:
+
+/////////////////////////////////
+
+Wallpaper 9:
