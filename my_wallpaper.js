@@ -1,23 +1,23 @@
-let tri_point = 100; //allows user to change the amount of triangles in a layer
-let size = 30; // allows user to change the spacing of the layers
-let layers = 4; //allows user to change amount of concentric circle layers
-let strokeThickness = 0; //allows user to change thickness of rings
-let triangleScale = 4; //allows user to change size of triangle
+let tri_point = 20; //allows user to change the amount of triangles in a layer
+let size = 50; // allows user to change the spacing of the layers
+let layers = 2; //allows user to change amount of concentric circle layers
+let strokeThickness = 1; //allows user to change thickness of rings
+let triangleScale = 2; //allows user to change size of triangle
 
 function randomColorPalette(){ //allows user to edit/add colours to the color palette
 let colorPalette = [
-color(245, 187, 0, 180),
-color(236, 159, 5, 180),
-color(191, 49, 0, 180),
+color(20, 20, 20, 180),
+color(238, 198, 67, 180),
+color(238, 240, 242, 180),
 ];
 return colorPalette[int(random(colorPalette.length))];
 }
 
 function wallpaper_background() {
-  background(234, 180, 100); //changes background color
+  background(13, 33, 161, 180); //changes background color
 }
-// set line 58 to orange
-// set line 52 to green
+// set line 58 to dark blue
+// set line 52 to light blue
 
 function drawTriangleAt(tx, ty, angle, s) {  //draws the triangle 
   push();
@@ -49,13 +49,12 @@ function my_symbol(x, y) { // sets up the tile layout
      let ty = y + radius *sin (angle);
      noStroke();
      if (i % 3 === 0){ // makes every third triangle a specified color
-      fill(142, 166, 4, 180)
+      fill(216, 180, 160, 180)
      }else {fill(randomColorPalette());}
-     let currentScale = (layers >3) ? 1 : triangleScale;
      drawTriangleAt(tx, ty, angle , triangleScale);
      }
       noFill();
-      stroke(255, 78, 0, 250); //sets up the ring/concentric circle structure
+      stroke(47, 75, 38, 250); //sets up the ring/concentric circle structure
       strokeWeight(strokeThickness);
       ellipse(x, y, radius*2, radius*2);
     }
