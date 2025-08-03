@@ -18,9 +18,9 @@ let triangleScale = 3; //allows user to change size of triangle
 
 function randomColorPalette(){ //allows user to edit/add colours to the color palette
 let colorPalette = [
-color(79, 93, 117, 180),
-color(191, 192, 192, 180),
-color(255, 255, 255),
+color(79, 93, 117, 250),
+color(250, 250, 250, 250),
+color(235, 129, 85),
 ];
 return colorPalette[int(random(colorPalette.length))];
 }
@@ -41,7 +41,9 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_width  = 100;
   pWallpaper.grid_settings.cell_height = 100;
   pWallpaper.grid_settings.row_offset  = 50;
+
 }
+
 
 /////////////////////////////////
 
